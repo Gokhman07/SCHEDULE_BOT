@@ -5,6 +5,7 @@ from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram.ext import MessageHandler
 from telegram.ext import Updater
 from telegram.ext import Filters
+from telegram.ext import updater
 
 from settings import TG_TOKEN
 from handlers import *
@@ -14,7 +15,11 @@ from handlers import *
 
 import os
 PORT = int(os.environ.get('PORT', 5000))
-
+updater=Updater(TG_TOKEN,use_context=True)
+updater.start_webhook(listen="0.0.0.0",
+port=int(PORT),
+url_path=TG_TOKEN)
+updater.bot.setWebhook('https://onatschedule.herokuapp.com/' + TG_TOKEN)
 
 
 logging.basicConfig(format='%(asctime)s-$(levelname)s-$(message)s',
