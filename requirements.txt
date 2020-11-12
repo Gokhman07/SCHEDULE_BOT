@@ -16,12 +16,12 @@ mccabe==0.6.1
 pip-tools==5.3.1
 pycparser==2.20
 pylint==2.6.0
-pyTelegramBotAPI==3.7.3
+
 python-telegram-bot==13.0
 pytz==2020.4
 requests==2.24.0
 six==1.15.0
-telegram==0.0.1
+urllib3==1.25.7
 toml==0.10.1
 tornado==6.1
 typed-ast==1.4.1
