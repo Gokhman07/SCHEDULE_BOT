@@ -24,15 +24,15 @@ def main():
     # создадим переменную my_bot, с помощью которой будем взаимодействовать с нашим ботом
     my_bot = Updater(TG_TOKEN, use_context=True)
     logging.info('Start bot')
-   PORT = int(os.environ.get('PORT', 5000))
-updater=Updater(TG_TOKEN,use_context=True)
-updater.start_webhook(listen="0.0.0.0",
-port=int(PORT),
-url_path=TG_TOKEN)
-updater.bot.setWebhook('https://onatschedule.herokuapp.com/' + TG_TOKEN)
+    PORT = int(os.environ.get('PORT', 5000))
+    updater=Updater(TG_TOKEN,use_context=True)
+    updater.start_webhook(listen="0.0.0.0",
+    port=int(PORT),
+    url_path=TG_TOKEN)
+    updater.bot.setWebhook('https://onatschedule.herokuapp.com/' + TG_TOKEN)
 
 
-logging.basicConfig(format='%(asctime)s-$(levelname)s-$(message)s',
+    logging.basicConfig(format='%(asctime)s-$(levelname)s-$(message)s',
                     level=logging.INFO,
                     filename='bot.log')
     
