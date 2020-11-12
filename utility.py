@@ -22,6 +22,7 @@ def get_keyboard():
 
     cursor.execute("SELECT Name FROM  TEACHERS")
     data= (cursor.fetchall())
+    cursor.close()
     print(data)
     ls=[]
     for teacher in data:
