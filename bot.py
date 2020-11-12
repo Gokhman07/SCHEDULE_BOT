@@ -14,7 +14,17 @@ from handlers import *
 
 
 import os
-PORT = int(os.environ.get('PORT', 5000))
+
+
+
+
+def main():
+
+    # описываем функцию (тело функции)
+    # создадим переменную my_bot, с помощью которой будем взаимодействовать с нашим ботом
+    my_bot = Updater(TG_TOKEN, use_context=True)
+    logging.info('Start bot')
+   PORT = int(os.environ.get('PORT', 5000))
 updater=Updater(TG_TOKEN,use_context=True)
 updater.start_webhook(listen="0.0.0.0",
 port=int(PORT),
@@ -25,16 +35,6 @@ updater.bot.setWebhook('https://onatschedule.herokuapp.com/' + TG_TOKEN)
 logging.basicConfig(format='%(asctime)s-$(levelname)s-$(message)s',
                     level=logging.INFO,
                     filename='bot.log')
-
-
-
-def main():
-
-    # описываем функцию (тело функции)
-    # создадим переменную my_bot, с помощью которой будем взаимодействовать с нашим ботом
-    my_bot = Updater(TG_TOKEN, use_context=True)
-    logging.info('Start bot')
-   
     
     my_bot.dispatcher.add_handler(CommandHandler('start', sms))  # обработчик команды start
 
