@@ -36,6 +36,13 @@ def get_keyboard():
     return my_keyboard
 
 def get_url(name):
+    mydb = mysql.connector.connect(
+    host="us-cdbr-east-02.cleardb.com",
+    user="b243ca206d55ea",
+    password="6f215509",
+    database='heroku_47b87531408c5a5'
+
+    )
     cursor = mydb.cursor()
     cursor.execute(f"SELECT URL, conf_id, password  FROM  TEACHERS WHERE Name ='{name}'")
     data= list(cursor.fetchall())
