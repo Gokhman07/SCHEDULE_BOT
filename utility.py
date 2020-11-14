@@ -7,22 +7,23 @@ from telegram import KeyboardButton
 
 SMILE = ['😊', '😀', '😇', '🤠', '😎', '🤓', '👶', '🧑‍🚀', '👮', '🦸', '🧟']
 
-mydb = mysql.connector.connect(
-  host="us-cdbr-east-02.cleardb.com",
-  user="b243ca206d55ea",
-  password="6f215509",
-  database='heroku_47b87531408c5a5'
-
-)
-cursor = mydb.cursor()
 
 
 # функция создает клавиатуру и ее разметку
 def get_keyboard():
+    
+    mydb = mysql.connector.connect(
+    host="us-cdbr-east-02.cleardb.com",
+    user="b243ca206d55ea",
+    password="6f215509",
+    database='heroku_47b87531408c5a5'
+
+     )
     cursor = mydb.cursor()
     cursor.execute("SELECT Name FROM  TEACHERS")
     data= (cursor.fetchall())
     cursor.close()
+    mydb.close()
     print(data)
     ls=[]
     for teacher in data:
