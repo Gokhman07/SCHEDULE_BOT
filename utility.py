@@ -19,7 +19,7 @@ cursor = mydb.cursor()
 
 # функция создает клавиатуру и ее разметку
 def get_keyboard():
-
+    cursor = mydb.cursor()
     cursor.execute("SELECT Name FROM  TEACHERS")
     data= (cursor.fetchall())
     cursor.close()
