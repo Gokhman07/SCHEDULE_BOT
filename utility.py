@@ -40,6 +40,7 @@ def get_url(name):
     cursor.execute(f"SELECT URL, conf_id, password  FROM  TEACHERS WHERE Name ='{name}'")
     data= list(cursor.fetchall())
     cursor.close()
+    mydb.close()
    
     
     conf=[]
