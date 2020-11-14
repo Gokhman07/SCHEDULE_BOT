@@ -36,6 +36,7 @@ def get_keyboard():
     return my_keyboard
 
 def get_url(name):
+    cursor.open()
     cursor.execute(f"SELECT URL, conf_id, password  FROM  TEACHERS WHERE Name ='{name}'")
     data= list(cursor.fetchall())
     cursor.close()
