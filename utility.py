@@ -27,7 +27,7 @@ def get_keyboard():
     print(data)
     ls=[]
     for teacher in data:
-      ls.append(list(teacher))
+      ls.append(sort(list(teacher)))
 
 
     
