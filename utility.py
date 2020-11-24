@@ -30,12 +30,12 @@ def get_keyboard():
     for d in data:
         ed_data.append(d[0])
      
-    sorted(ed_data)
+    ed_data.sort()
     print(ed_data)
     for teacher in ed_data:
       ls.append((([teacher])))
     
-    ls.sort()
+    
     print(ls)
 
     
