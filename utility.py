@@ -24,8 +24,13 @@ def get_keyboard():
     data= (cursor.fetchall())
     cursor.close()
     mydb.close()
-    print(data)
+    #print(data)
     ls=[]
+    ed_data=[]
+    for d in data:
+        ed_data.appen(d[0])
+     
+    print(ed_data)
     for teacher in data:
       ls.append((list(teacher)))
     
